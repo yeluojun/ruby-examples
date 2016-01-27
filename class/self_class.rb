@@ -12,7 +12,15 @@ puts '当前类:', self_class, ''
 
 # eg2. class_eval
 class ClassEval
-  def add_fund_to_a_class(arg_class)
-    # arg_class.class_eval{ }
+  class << self
+    def add_fund_to_a_class(arg_class, function)
+      arg_class.class_eval do
+        define_method function do
+          'this is a test'
+        end
+      end
+    end
   end
 end
+ClassEval.add_fund_to_a_class(String, 'finit')
+puts 'class_eval:', 'abc'.finit, ''
