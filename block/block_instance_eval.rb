@@ -50,8 +50,8 @@ puts 'obj_two', obj_two_method_one_value, obj_two_method_two_value, obj_two_meth
 
 
 # just like:
-
-# obj.instance_eval do
+#
+# Obj.instance_eval do
 #   def a
 #
 #   end
